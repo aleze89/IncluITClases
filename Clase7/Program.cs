@@ -17,7 +17,7 @@ for (int i = 0;i<numerosIngresados.Length;i++)
     numerosIngresados[i] = int.Parse(Console.ReadLine());
 }
 
-var suma = 0;   
+var suma = 0f;   
 for (int i = 0; i < numerosIngresados.Length; i++)
 {
     suma += numerosIngresados[i];
@@ -64,4 +64,11 @@ Console.WriteLine($"El minimo es: {menor}");
 
 var promedio = suma / numerosIngresados.Length;
 Console.WriteLine($"El promedio de los numeros ingresados es: {promedio}");
+
+//muestra de valores ingresados
+Console.WriteLine($"Los valores ingresados son: ");
+for (int i = 0; i < numerosIngresados.Length; i++)
+{
+    Console.Write($" - {numerosIngresados[i]} - ");
+}
 
