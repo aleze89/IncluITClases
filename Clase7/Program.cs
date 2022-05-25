@@ -23,3 +23,40 @@ for (int i = 0; i < numerosIngresados.Length; i++)
     suma += numerosIngresados[i];
 }
     Console.WriteLine($"La suma de los numeros ingresados es:{suma}");
+
+//mayor
+
+for (int i = 0; i < numerosIngresados.Length; i++)
+{
+    if (i == 0)
+    {
+        mayor = numerosIngresados[i];
+
+    }
+    else if (numerosIngresados[i] > mayor)
+    {
+        mayor = numerosIngresados[i];
+    }
+
+}
+
+Console.WriteLine($"el maximo es: {mayor}");
+
+//menor
+
+for (int i = 0; i < numerosIngresados.Length; i++)
+{
+    if (i == 0)
+    {
+        menor = numerosIngresados[i];
+
+    }
+    else if (numerosIngresados[i] < menor)
+    {
+        menor = numerosIngresados[i];
+    }
+
+}
+
+Console.WriteLine($"el minimo es: {menor}");
+
