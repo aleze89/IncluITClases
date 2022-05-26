@@ -3,8 +3,8 @@
 //3) Obtener cual es el mayor de todos los números.  *PROCESO (IF ?)  +++ 
 //4) Obtener cual es el menor de todos los números.  *PROCESO (IF ?) +++
 //5) Obtener el promedio de todos los números.  *PROCESO +++
-//6) Mostrar todos los números ingresados por pantalla.  *SALIDA DE DATOS
-//7) Mostrar los valores calculados en los puntos 2, 3, 4 y 5.  *SALIDA DE DATOS
+//6) Mostrar todos los números ingresados por pantalla.  *SALIDA DE DATOS  +++
+//7) Mostrar los valores calculados en los puntos 2, 3, 4 y 5.  *SALIDA DE DATOS  +++
 
 
 var mayor = 0;
