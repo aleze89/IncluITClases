@@ -16,6 +16,8 @@ int cantidadFilas = int.Parse(Console.ReadLine());
 Console.WriteLine("Ingrese la cantidad de Columnas de la matriz :");
 int cantidadColumnas = int.Parse(Console.ReadLine());
 
+//  matriz
+
 int[,] numeros = new int[cantidadFilas, cantidadColumnas]; 
 
 //  tamanio filas
@@ -23,37 +25,54 @@ int lengthFilas = numeros.GetUpperBound(0) + 1;
 //  tamanio columnas
 int lengthColumnas = numeros.GetUpperBound(1) + 1;
 
-double[] promedios = new double[lengthFilas];  // PENDIENTE
 
 //  Ingreso de datos a la matriz
+int fila = 0;
+int columna = 0;
+double[] promedios = new double[cantidadColumnas];  // PENDIENTE
+double suma = 0;
 
-for (int columna= 0; columna < lengthColumnas; columna++)
+for (columna = 0; columna < lengthColumnas; columna++)
 {
     Console.WriteLine();
     Console.WriteLine($"-----Te encuentras en la columna n°: {columna + 1 }-----");
     Console.WriteLine();
 
-    for (int fila = 0; fila < lengthFilas; fila++)
+    for (fila = 0; fila < lengthFilas; fila++)
     {
         Console.WriteLine($"Ingresa los valores correspondientes a la fila n° : {fila + 1}");
         numeros[fila, columna] = int.Parse(Console.ReadLine());
+        suma += numeros[fila];
     }
 }
 
 //  Muestra de datos de la matriz
 
-for (int columna = 0; columna < lengthColumnas; columna++)
+
+for (columna = 0; columna < lengthColumnas; columna++)
 {
     Console.WriteLine("-----Muestra de datos-----");
     Console.WriteLine($"-----Te encuentras en la columna n°: {columna + 1 }-----");
     Console.WriteLine();
 
-    for (int fila = 0; fila < lengthFilas; fila++)
+    for (fila = 0; fila < lengthFilas; fila++)
     {
         Console.WriteLine($"Te encuentras en la fila n° : {fila + 1}");
         Console.WriteLine($"Tiene almacenado: {numeros[fila, columna]}");
+        //promedios = typeof(numeros[fila, columna] / cantidadFilas);
     }
 }
+
+//  vector
+
+
+//var promediosCalculados = numeros[fila,columna] / lengthColumnas;
+//promedios = double.TryParse([numeros[fila,columna]);
+
+
+
+
+
 
 
 
