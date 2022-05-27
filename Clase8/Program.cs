@@ -6,6 +6,11 @@
 //6) Calcular el promedio de cada columna y asignarlo a la posicion correspondiente dentro del vector promedios *PROCESO
 //7) Mostrar los promedios recorriendo el vector promedios *MUESTRA DE DATOS
 
+Console.WriteLine("=========================");
+Console.WriteLine("-----Creacion Matriz-----");
+Console.WriteLine("=========================");
+
+
 //   Filas
 
 Console.WriteLine("Ingrese la cantidad de Filas de la matriz :");
@@ -29,8 +34,11 @@ int lengthColumnas = numeros.GetUpperBound(1) + 1;
 //  Ingreso de datos a la matriz
 int fila = 0;
 int columna = 0;
-double[] promedios = new double[cantidadColumnas];  // PENDIENTE
-double suma = 0;
+
+Console.WriteLine("=========================");
+Console.WriteLine("-----Ingreso de datos-----");
+Console.WriteLine("=========================");
+
 
 for (columna = 0; columna < lengthColumnas; columna++)
 {
@@ -42,23 +50,28 @@ for (columna = 0; columna < lengthColumnas; columna++)
     {
         Console.WriteLine($"Ingresa los valores correspondientes a la fila n° : {fila + 1}");
         numeros[fila, columna] = int.Parse(Console.ReadLine());
-        suma += numeros[fila];
+        
     }
 }
 
 //  Muestra de datos de la matriz
 
+    Console.WriteLine("=========================");
+    Console.WriteLine("-----Muestra de datos-----");
+    Console.WriteLine("=========================");
 
 for (columna = 0; columna < lengthColumnas; columna++)
 {
-    Console.WriteLine("-----Muestra de datos-----");
+    Console.WriteLine("");
     Console.WriteLine($"-----Te encuentras en la columna n°: {columna + 1 }-----");
-    Console.WriteLine();
+    Console.WriteLine("");
 
     for (fila = 0; fila < lengthFilas; fila++)
     {
         Console.WriteLine($"Te encuentras en la fila n° : {fila + 1}");
+        Console.WriteLine("");
         Console.WriteLine($"Tiene almacenado: {numeros[fila, columna]}");
+        Console.WriteLine("");
         //promedios = typeof(numeros[fila, columna] / cantidadFilas);
     }
 }
@@ -68,6 +81,31 @@ for (columna = 0; columna < lengthColumnas; columna++)
 
 //var promediosCalculados = numeros[fila,columna] / lengthColumnas;
 //promedios = double.TryParse([numeros[fila,columna]);
+
+double[] promedios = new double[cantidadColumnas];  // PENDIENTE
+double suma = 0;
+
+Console.WriteLine();
+Console.WriteLine($"========================================");
+Console.WriteLine();
+
+
+for (columna = 0; columna < lengthColumnas; columna++)
+{
+
+    for (fila = 0; fila < lengthFilas; fila++)
+    {
+        
+        suma += numeros[fila,columna];
+
+    }
+}
+
+for (fila = 0; fila < promedios.Length ; fila++)
+{
+    promedios[fila] = suma / lengthFilas;
+    Console.WriteLine($"El promedio de la columna n° {fila + 1} es : {promedios[fila]}");
+}
 
 
 
