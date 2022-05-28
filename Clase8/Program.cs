@@ -90,7 +90,7 @@ Console.WriteLine($"========================================");
 Console.WriteLine();
 
 
-for (columna = 0; columna < lengthColumnas; columna++)
+for (columna  = 0; columna < lengthColumnas; columna++)
 {
 
     for (fila = 0; fila < lengthFilas; fila++)
