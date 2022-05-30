@@ -95,8 +95,9 @@ for (columna  = 0; columna < lengthColumnas; columna++)
 
     for (fila = 0; fila < lengthFilas; fila++)
     {
-        
-        suma += numeros[fila,columna];
+
+        suma += numeros[fila, columna]; // Suma toda la matriz completa, tengo q encontrar 
+        //la forma de sumar solo las filas para poder hacer el promedio.
 
     }
 }
