@@ -9,3 +9,5 @@
 //      la segunda del 10 al 19, la tercera del 20 al 29,
 //      así sucesivamente hasta la última columna la cual contiene del 80 al 90.
 //7)    Mostrar el carton por pantalla.
+
+var miArray = new int[10];
