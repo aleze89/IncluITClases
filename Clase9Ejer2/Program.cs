@@ -10,4 +10,4 @@
 //      así sucesivamente hasta la última columna la cual contiene del 80 al 90.
 //7)    Mostrar el carton por pantalla.
 
-var miArray = new int[10];
+var cartonBingo = new int[3,9];
