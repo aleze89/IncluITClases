@@ -10,4 +10,24 @@
 //      así sucesivamente hasta la última columna la cual contiene del 80 al 90.
 //7)    Mostrar el carton por pantalla.
 
-var cartonBingo = new int[3,9];
+// Variables
+
+var fila = 3;
+var columna = 9;
+
+var cartonBingo = new int[fila,columna];
+Random aleatorio = new Random();
+
+
+
+for (int f = 0; f < fila; f++)
+{
+    for (int c = 0; c < columna; c++)
+    {
+        cartonBingo[f,c] = aleatorio.Next(90);
+        Console.Write($"{cartonBingo[f,c]:00} ");
+    }
+    Console.WriteLine();
+
+}
+
