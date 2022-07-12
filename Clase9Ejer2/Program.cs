@@ -17,22 +17,29 @@ var columna = 9;
 var contador = 1;
 
 var cartonBingo = new int[fila,columna];
-Random aleatorio = new Random();
+var aleatorio = new Random();
 
-//  Creacion valores de carton
+//  Creacion valores de carton discriminando columnas
 
-for (int f = 0; f < fila; f++)
+for (int c = 0; c < columna; c++)
 {
-    for (int c = 0; c < columna; c++)
+    for (int f = 0; f < fila; f++)
     {
-        while (contador != columna)
+        int numeroInicial = 0;
+        if (c==0) // Columna 1
         {
-        cartonBingo[f,c] = aleatorio.Next(contador*9);
-
-        contador++;
-        break;
+            numeroInicial = aleatorio.Next(1, 10); // 1 al 9
         }
-        
+        else if (c==8) //Columna 9
+        {
+            numeroInicial = aleatorio.Next(80, 91); // 80 al 90
+        }
+        else // Todas las demas Columnas
+        {
+            numeroInicial = aleatorio.Next(c * 10, c * 10 + 10);
+        }
+
+        cartonBingo[f, c] = numeroInicial;
     }
     
 
