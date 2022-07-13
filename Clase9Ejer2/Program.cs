@@ -47,13 +47,31 @@ for (int c = 0; c < columna; c++)
 
 //  Mostrar valores de carton
 
+//Console.WriteLine(" ----------------------------------------------- ");
 for (int f = 0; f < fila; f++)
 {
+    Console.WriteLine(" ----------------------------------------------- ");
+
     for (int c = 0; c < columna; c++)
     {
-        Console.Write($"{cartonBingo[f, c]:00} ");
+        if (c==0)
+        {
+            Console.Write(" | ");
+        }
+
+        if (cartonBingo[f,c]==0)
+        {
+            Console.Write("| ");
+        }
+        else
+        {
+            Console.Write($" {cartonBingo[f, c]:00} |");
+        }
     }
     Console.WriteLine();
 
 }
+Console.WriteLine(" ----------------------------------------------- ");
+Console.WriteLine();
+
 
