@@ -25,21 +25,41 @@ for (int c = 0; c < columna; c++)
 {
     for (int f = 0; f < fila; f++)
     {
-        int numeroInicial = 0;
-        if (c==0) // Columna 1
+        int numeroCarton = 0;
+        bool numeroRepetido = false;
+
+        while (!numeroRepetido)
         {
-            numeroInicial = aleatorio.Next(1, 10); // 1 al 9
-        }
-        else if (c==8) //Columna 9
-        {
-            numeroInicial = aleatorio.Next(80, 91); // 80 al 90
-        }
-        else // Todas las demas Columnas
-        {
-            numeroInicial = aleatorio.Next(c * 10, c * 10 + 10);
+            if (c==0) // Columna 1
+            {
+                numeroCarton = aleatorio.Next(1, 10); // 1 al 9
+            }
+            else if (c==8) //Columna 9
+            {
+                numeroCarton = aleatorio.Next(80, 91); // 80 al 90
+            }
+            else // Todas las demas Columnas
+            {
+                numeroCarton = aleatorio.Next(c * 10, c * 10 + 10);
+            }
+
+            // Buscamos si el nuemroCarton existe en la columna
+
+            numeroRepetido = true;
+            for (int f2 = 0; f2 < 3; f2++)
+            {
+                if (cartonBingo[f2,c]==numeroCarton)
+                {
+                    numeroRepetido = false;
+                    break;
+                }
+            }
+            // Si salio del bucle y no encontro repetidos,
+            //numeroRepetido = true y sale del bucle while
+
         }
 
-        cartonBingo[f, c] = numeroInicial;
+        cartonBingo[f, c] = numeroCarton;
     }
     
 
