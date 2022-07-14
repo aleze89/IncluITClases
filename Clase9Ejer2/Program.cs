@@ -82,6 +82,83 @@
         }
     }
 
+    // Rellenar con espacios los lugares con ceros
+
+    var espaciosBorrados= 0;
+    while (espaciosBorrados < 12)
+    {
+        var filaBorrar = aleatorio.Next(0, fila);
+        var columnaBorrar = aleatorio.Next(0, columna);
+
+        if (cartonBingo[filaBorrar,columnaBorrar] == 0)
+        {
+            continue;
+        }
+
+        // Contamos cuantos ceros hay en esta fila.
+
+        var cerosEnFila = 0;
+        for (int c = 0;c < columna; c++) 
+        {
+            if (cartonBingo[filaBorrar,c] == 0)
+            {
+                cerosEnFila++;
+            }
+        }
+
+        // Contamos cuantos ceros hay en esta columna
+
+        var cerosEnColumna = 0;
+        for (int f = 0; f < fila; f++)
+        {
+            if (cartonBingo[f,columnaBorrar] == 0)
+            {
+                cerosEnFila++;
+            }
+        }
+
+        // Contamos cuantos elementos tengo en cada columna.
+
+        var elementosPorColumna = new int[columna];
+        for (int c = 0; c < columna; c++)
+        {
+            for (int f = 0; f < fila; f++)
+            {
+                if (cartonBingo[f,c] != 0 )
+                {
+                    elementosPorColumna[c]++;
+                }
+            }
+        }
+
+        // Contamos cuantas columnas hay con un solo numero
+        var columnasConUnSoloNumero = 0;
+        for (int c = 0; c < columna; c++)
+        {
+            if (elementosPorColumna[c] == 1)
+            {
+                columnasConUnSoloNumero++;
+            }
+        }
+
+        // Si hay 4 ceros en la fila o si hay 2 ceros en la columna no hago nada.
+
+        if(cerosEnFila == 4 || cerosEnColumna == 2)
+            continue;
+
+        // Si hay 3 columnas con un solo numero, a partir de ahora debo borrar las columnas q tienen 3 elementos.
+
+        if(columnasConUnSoloNumero == 3 && elementosPorColumna[columnaBorrar] != 3)
+        {
+            continue;
+        }
+
+        // Si no entró por las opciones anteriores borrar el numero.
+
+        cartonBingo[filaBorrar,columnaBorrar] = 0;
+        espaciosBorrados++;
+    }
+
     //  Mostrar valores de carton
 
     //Console.WriteLine(" ----------------------------------------------- ");
@@ -96,9 +173,9 @@
                 Console.Write(" | ");
             }
 
-            if (cartonBingo[f,c]==0)
+            if (cartonBingo[f,c]==0) // Si es cero, mostramos un espacio.
             {
-                Console.Write("| ");
+                Console.Write("    |");
             }
             else
             {
