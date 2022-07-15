@@ -25,15 +25,26 @@ namespace Clase13Billetera
             //combinacion del dinero de ambas billeteras.  
             //*Una vez combinadas las 2 billeteras(y creada la tercera), 
             //las 2 primeras billeteras deberan quedar en cero. (Sin billetes)
-
-            Console.WriteLine("Ingrese el billete q posee!");
-            var tipoBillete = Console.ReadLine();
             
-            Console.WriteLine("Ingrese la cantidad de billetes q posee!");
-            var denominacionBillete = Console.ReadLine();
+            Console.WriteLine("Ingrese la denominacion del billete q posee!");
+            var denominacionBillete = int.Parse(Console.ReadLine());
+            var miValorBillete = new Billetera();
+            miValorBillete.BilleteraDe10 = denominacionBillete;
 
-            var sumarBilletes = new Billetera();
+            var miCantidadBillete = new Billetera();
+            if (miValorBillete.BilleteraDe10 != 0 )
+            {
+                Console.WriteLine("Ingrese la cantidad de billetes q posee!");
+                var cantidadBillete = int.Parse(Console.ReadLine());
+                miCantidadBillete.BilleteraDe10 = cantidadBillete;
+            }
+            //else if (true)
+            //{
 
+            //}
+
+            //var sumarBilletes = new Billetera();
+            Console.WriteLine($"Usted posee:{miCantidadBillete.BilleteraDe10} billetes de $10");
         }
     }
 }
