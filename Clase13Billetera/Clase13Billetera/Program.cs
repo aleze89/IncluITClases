@@ -27,24 +27,96 @@ namespace Clase13Billetera
             //las 2 primeras billeteras deberan quedar en cero. (Sin billetes)
             
             Console.WriteLine("Ingrese la denominacion del billete q posee!");
-            var denominacionBillete = int.Parse(Console.ReadLine());
+            var denominacionBilleteInicial = int.Parse(Console.ReadLine());
             var miValorBillete = new Billetera();
-            miValorBillete.BilleteraDe10 = denominacionBillete;
+            miValorBillete.BilleteraDe10 = denominacionBilleteInicial;
+
+            var miValorBilleteSiguienteVuelta = new Billetera();
 
             var miCantidadBillete = new Billetera();
-            if (miValorBillete.BilleteraDe10 != 0 )
+            for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine("Ingrese la cantidad de billetes q posee!");
-                var cantidadBillete = int.Parse(Console.ReadLine());
-                miCantidadBillete.BilleteraDe10 = cantidadBillete;
+
+                miValorBillete.BilleteraDe10 = denominacionBilleteInicial;
+
+                if (miValorBillete.BilleteraDe10 == 10 && miValorBillete.BilleteraDe10 != 0 )
+                {
+                    Console.WriteLine("Ingrese la cantidad de billetes q posee!");
+                    var cantidadBillete = int.Parse(Console.ReadLine());
+                    miCantidadBillete.BilleteraDe10 = cantidadBillete;
+                }
+                else if (miValorBillete.BilleteraDe100 == 100 && miValorBillete.BilleteraDe100 != 0)
+                {
+                    Console.WriteLine("Ingrese la cantidad de billetes q posee!");
+                    var cantidadBillete = int.Parse(Console.ReadLine());
+                    miCantidadBillete.BilleteraDe100 = cantidadBillete;
+                }
+                else
+                {
+                    Console.WriteLine("Ingrese la cantidad de billetes q posee!");
+                    var cantidadBillete = int.Parse(Console.ReadLine());
+                    miCantidadBillete.BilleteraDe1000 = cantidadBillete;
+                }
+
+                if (miValorBillete.BilleteraDe10 == 10)
+                {
+                    miValorBilleteSiguienteVuelta.BilleteraDe10 = miValorBillete.BilleteraDe10 * 10;
+                }
+
+                if (miValorBillete.BilleteraDe10 == 100)
+                {
+                    miValorBilleteSiguienteVuelta.BilleteraDe10 = miValorBillete.BilleteraDe10 * 10;
+
+                }
+
+                if (denominacionBilleteInicial == 1000)
+                {
+                    continue;
+                }
             }
-            //else if (true)
+
+            //for (int j = 0; j < 2; j++)
             //{
+
+
+            //    if (miValorBillete.BilleteraDe20 == 20 && miValorBillete.BilleteraDe20 != 0)
+            //    {
+            //        Console.WriteLine("Ingrese la cantidad de billetes q posee!");
+            //        var cantidadBillete = int.Parse(Console.ReadLine());
+            //        miCantidadBillete.BilleteraDe20 = cantidadBillete;
+            //    }
+            //    else (miValorBillete.BilleteraDe200 == 200 && miValorBillete.BilleteraDe200 != 0)
+            //    {
+            //        Console.WriteLine("Ingrese la cantidad de billetes q posee!");
+            //        var cantidadBillete = int.Parse(Console.ReadLine());
+            //        miCantidadBillete.BilleteraDe200 = cantidadBillete;
+            //    }
+
+                
+            //}
+
+            //for (int k = 0; k < 2; k++)
+            //{
+            //    if (miValorBillete.BilleteraDe50 == 50 && miValorBillete.BilleteraDe50 != 0)
+            //    {
+            //        Console.WriteLine("Ingrese la cantidad de billetes q posee!");
+            //        var cantidadBillete = int.Parse(Console.ReadLine());
+            //        miCantidadBillete.BilleteraDe50 = cantidadBillete;
+            //    }
+            //    else (miValorBillete.BilleteraDe500 == 500 && miValorBillete.BilleteraDe500 != 0)
+            //    {
+            //        Console.WriteLine("Ingrese la cantidad de billetes q posee!");
+            //        var cantidadBillete = int.Parse(Console.ReadLine());
+            //        miCantidadBillete.BilleteraDe500 = cantidadBillete;
+            //    }
 
             //}
 
             //var sumarBilletes = new Billetera();
+            
             Console.WriteLine($"Usted posee:{miCantidadBillete.BilleteraDe10} billetes de $10");
+                       
+            
         }
     }
 }
